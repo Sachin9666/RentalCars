@@ -7,10 +7,10 @@ const Home = () => {
 
     const vehicles = [
         { id: 1, name: 'BMW M4 Competition', category: 'Sports', price: 15000, rating: 4.9, seats: 4, transmission: 'Auto', img: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&w=600' },
-        { id: 2, name: 'Porsche 911 Carrera', category: 'Luxury', price: 25000, rating: 5.0, seats: 2, transmission: 'Auto', img: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&w=600' },
-        { id: 3, name: 'Nissan GT-R R35', category: 'Sports', price: 20000, rating: 4.9, seats: 4, transmission: 'Auto', img: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&w=600' },
-        { id: 4, name: 'Toyota Supra MK5', category: 'Sports', price: 12000, rating: 4.8, seats: 2, transmission: 'Manual', img: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&w=600' },
-        { id: 5, name: 'Mahindra Thar', category: 'SUV', price: 8000, rating: 4.7, seats: 4, transmission: 'Manual', img: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&w=600' },
+        { id: 2, name: 'Lamborghini Huracan', category: 'Luxury', price: 25000, rating: 5.0, seats: 2, transmission: 'Auto', img: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&w=600' },
+        { id: 3, name: 'Porsche 911 Carrera', category: 'Sports', price: 20000, rating: 4.9, seats: 4, transmission: 'Auto', img: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&w=600' },
+        { id: 4, name: 'Mercedes-Benz C63', category: 'Sports', price: 12000, rating: 4.8, seats: 2, transmission: 'Manual', img: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&w=600' },
+        { id: 5, name: 'Defender 110', category: 'SUV', price: 8000, rating: 4.7, seats: 4, transmission: 'Manual', img: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&w=600' },
         { id: 6, name: 'Audi RS5 Sportback', category: 'Luxury', price: 18000, rating: 4.9, seats: 5, transmission: 'Auto', img: 'https://images.pexels.com/photos/1035108/pexels-photo-1035108.jpeg?auto=compress&w=600' },
     ];
 
