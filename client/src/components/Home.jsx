@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Search, Car, Star, Shield, Clock, Users, ChevronDown, Phone, Mail, Facebook, Twitter, Instagram, Menu, X, Check, ArrowRight } from 'lucide-react';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
 
 const Home = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,11 +45,11 @@ const Home = () => {
                             <span className="text-xl font-bold text-gray-900">RentalCars</span>
                         </div>
 
-                        {/* Desktop Menu */}
+                        {/* Desktop Menu - Updated with About and Contact links */}
                         <div className="hidden md:flex items-center gap-8">
                             <a href="#" className="text-gray-900 font-medium hover:text-blue-600 transition">Home</a>
                             <a href="#vehicles" className="text-gray-600 hover:text-blue-600 transition">Vehicles</a>
-                            <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition">How It Works</a>
+                            <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
                             <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
                         </div>
 
@@ -65,8 +67,7 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-
-                {/* Mobile Menu */}
+                {/* Mobile Menu - Updated with About and Contact links */}
                 {mobileMenuOpen && (
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
@@ -75,7 +76,7 @@ const Home = () => {
                     >
                         <a href="#" className="block text-gray-900 font-medium py-2">Home</a>
                         <a href="#vehicles" className="block text-gray-600 py-2">Vehicles</a>
-                        <a href="#how-it-works" className="block text-gray-600 py-2">How It Works</a>
+                        <a href="#about" className="block text-gray-600 py-2">About</a>
                         <a href="#contact" className="block text-gray-600 py-2">Contact</a>
                         <hr />
                         <a href="/login" className="block text-gray-700 py-2">Sign In</a>
@@ -214,6 +215,9 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Imported AboutUs Component */}
+            <AboutUs />
+
             {/* Featured Vehicles */}
             <section id="vehicles" className="bg-gray-100 py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -276,6 +280,78 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Imported ContactUs Component */}
+            <ContactUs />
+
+      <footer className="bg-gray-900 text-gray-300" style={{paddingTop:'20px'}}>
+  <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+    {/* Top Sections */}
+    <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
+
+      {/* Brand */}
+      <div className="flex-1">
+        <div className="flex items-center gap-2 mb-4 mt-10">
+          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <Car className="text-white" size={22} />
+          </div>
+          <span className="text-xl font-bold text-white">RentalCars</span>
+        </div>
+        <p className="text-gray-400 text-sm">
+          Premium car rental service offering comfort, luxury, and reliability at the best prices. Book your perfect ride today!
+        </p>
+      </div>
+
+      {/* Quick Links */}
+      <div className="flex-1">
+        <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+        <ul className="space-y-2 text-sm">
+          <li><a href="#" className="hover:text-white transition">Home</a></li>
+          <li><a href="#vehicles" className="hover:text-white transition">Vehicles</a></li>
+          <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+          <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      {/* Support */}
+      <div className="flex-1">
+        <h4 className="text-white font-semibold mb-3">Support</h4>
+        <ul className="space-y-2 text-sm">
+          <li className="hover:text-white transition cursor-pointer">FAQs</li>
+          <li className="hover:text-white transition cursor-pointer">Terms & Conditions</li>
+          <li className="hover:text-white transition cursor-pointer">Privacy Policy</li>
+          <li className="hover:text-white transition cursor-pointer">Cancellation Policy</li>
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div className="flex-1">
+        <h4 className="text-white font-semibold mb-3">Contact</h4>
+        <ul className="space-y-3 text-sm">
+          <li className="flex items-center gap-2">
+            <Phone size={16} /> +91 98765 43210
+          </li>
+          <li className="flex items-center gap-2">
+            <Mail size={16} /> support@rentalcars.com
+          </li>
+          <li className="flex items-center gap-2">
+            <MapPin size={16} /> Hyderabad, Telangana, India
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Bottom Section */}
+    <div className="border-t border-gray-700 text-center text-sm text-gray-400">
+      <div style={{paddingBottom:'20px'}}> {/* <-- Use py-8 for visible top & bottom space */}
+        © {new Date().getFullYear()} RentalCars. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
         </div>
     );
 };
