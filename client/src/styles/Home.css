@@ -1,0 +1,426 @@
+/* Home Page Styles */
+
+.home-page {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #f9fafb;
+}
+
+/* Navbar (Shared style hooks if needed, but keeping simple for now) */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    /* Taller hero */
+    background: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #0f172a 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+    color: white;
+}
+
+/* Animated Background Elements */
+.hero-bg-accent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: pulseGlow 10s infinite alternate;
+}
+
+.glow-1 {
+    background: #2563eb;
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    right: -100px;
+}
+
+.glow-2 {
+    background: #4f46e5;
+    width: 600px;
+    height: 600px;
+    bottom: -150px;
+    left: -150px;
+    animation-delay: 2s;
+}
+
+.glow-3 {
+    background: #facc15;
+    /* Yellow accent */
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    animation-delay: 4s;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Moving Road Lines (Subtle background animation) */
+.road-lines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background:
+        linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.05) 50%);
+    background-size: 100px 100%;
+    transform: skewX(-60deg) scaleY(0.5);
+    transform-origin: bottom;
+    animation: moveRoad 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes moveRoad {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 1000px 0;
+    }
+}
+
+/* Hero Content */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-content-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.hero-text-col {
+    text-align: left;
+}
+
+.hero-tagline {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    color: #bfdbfe;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.hero-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1280px) {
+    .hero-heading {
+        font-size: 4.5rem;
+    }
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn-hero-primary {
+    background-color: #facc15;
+    color: #1e1b4b;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.3);
+}
+
+.btn-hero-primary:hover {
+    background-color: #fde047;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(250, 204, 21, 0.4);
+}
+
+.btn-hero-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn-hero-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Floating Car Animation */
+.hero-image-col {
+    position: relative;
+    perspective: 1000px;
+}
+
+.floating-car {
+    width: 100%;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+    animation: floatCar 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes floatCar {
+    0% {
+        transform: translateY(0) rotateX(0) rotateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateX(2deg) rotateY(-2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateX(0) rotateY(0);
+    }
+}
+
+.car-reflection {
+    position: absolute;
+    bottom: -40px;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    filter: blur(10px);
+    animation: shadowPulse 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes shadowPulse {
+    0% {
+        transform: scaleX(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scaleX(0.9);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scaleX(1);
+        opacity: 0.6;
+    }
+}
+
+/* Search Widget (Floating overlap) */
+.search-widget-wrapper {
+    margin-top: -4rem;
+    /* Overlap hero */
+    position: relative;
+    z-index: 20;
+    padding: 0 2rem;
+}
+
+.search-widget {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Standard Sections */
+.home-section {
+    padding: 5rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section-h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.section-sub {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.view-all-link {
+    color: #2563eb;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s;
+}
+
+.view-all-link:hover {
+    gap: 0.75rem;
+    text-decoration: underline;
+}
+
+/* Vehicle Cards Grid */
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .vehicles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .vehicles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.vehicle-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #bfdbfe;
+}
+
+.card-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.vehicle-card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Categories */
+.category-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.category-name {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* About & Contact Previews (Using new clean styles) */
+.home-about-preview {
+    background: white;
+    padding: 6rem 2rem;
+}
+
+.home-contact-preview {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.contact-preview-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
