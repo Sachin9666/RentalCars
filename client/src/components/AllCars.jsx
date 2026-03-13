@@ -4,7 +4,7 @@ import { ArrowLeft, Car, Star, Users, ArrowRight } from 'lucide-react';
 import { vehicles } from '../data/vehicles';
 
 const AllCars = () => {
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState('All');     
 
     const categories = ['All', 'Economy', 'SUV', 'Luxury', 'Sports', 'Electric', 'Vans'];
 
